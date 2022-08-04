@@ -1,9 +1,31 @@
+---
+import getCurrentListening from "api/spotify";
+import SpotifyCard from "./SpotifyCard.astro";
+
+const data = await getCurrentListening();
+
+const song = {
+    isPlaying: data.is_playing,
+    title: data.item.name,
+    artist: data.item.artists.map((_artist) => _artist.name).join(", "),
+    album: data.item.album.name,
+    albumArt: data.item.album.images[0].url,
+    url: data.item.external_urls.spotify,
+}
+
+---
+
 <nav class="absolute text-white z-50 w-[90%] mx-auto top-0 left-0 right-0 py-8 flex items-center justify-between">
     <h1 class="font-bold">
         <a href="/">stylessh</a>
     </h1>
 
     <ul class="flex items-center space-x-6 text-sm md:text-base">
+
+        {data && song.isPlaying ? (
+        <SpotifyCard song={song} />
+        ): null}
+
         <li>
             <a href="/posts">posts.</a>
         </li>
