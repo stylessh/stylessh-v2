@@ -3,7 +3,7 @@ export const getRepositories = async (): Promise<any> => {
     "https://api.github.com/users/stylessh/repos?per_page=50",
     {
       headers: {
-        Authorization: `token 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`,
+        Authorization: `token ${import.meta.env.GITHUB_TOKEN}`,
       },
     }
   ).then((res) => res.json());
