@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "Trackify",
+    "url": "https://trackify.vercel.app/",
+    "roles": ["Frontend Developer", "Designer"],
+    "media": "/assets/projects/trackify.gif"
+  },
+  {
+    "id": 1,
+    "name": "TakeNote",
+    "url": "https://takenote-delta.vercel.app/",
+    "roles": ["Fullstack Developer", "Designer"],
+    "media": "/assets/projects/takenote.gif"
+  },
+  {
+    "id": 2,
+    "name": "Demakelij",
+    "url": "https://demakelij.be/configurator/",
+    "roles": ["Fullstack Developer", "Designer", "Lead"],
+    "media": "/assets/projects/demakelij.gif"
+  },
+  {
+    "id": 3,
+    "name": "Mahalo",
+    "url": "https://mahalotv.com/",
+    "roles": ["Fullstack Developer", "Lead"],
+    "media": "/assets/projects/mahalo.gif"
+  }
+]

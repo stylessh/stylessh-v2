@@ -1,0 +1,23 @@
+{
+  "name": "@example/basics",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^0.2.5",
+    "astro": "^1.0.0-rc.4",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.14",
+    "sass": "^1.54.2",
+    "tailwindcss": "^3.1.7"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^0.5.2",
+    "preact": "^10.10.0"
+  }
+}

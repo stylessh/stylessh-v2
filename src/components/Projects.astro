@@ -1,0 +1,16 @@
+---
+import ProjectList from './ProjectList';
+import Repositories from './Repositories.astro';
+---
+
+<section class="min-h-screen overflow-hidden">
+
+    <header class="my-12 text-center">
+        <h2 class="text-white text-2xl font-bold">Selected projects.</h2>
+        <!-- Line -->
+        <div class="h-16 w-0.5 bg-gray-200 m-6 mx-auto"></div>
+    </header>
+
+    <ProjectList client:load />
+    <Repositories />
+</section>
