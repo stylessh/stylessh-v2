@@ -2,8 +2,8 @@ const NOW_PLAYING_ENDPOINT = `https://api.spotify.com/v1/me/player/currently-pla
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const basic = btoa(
-  `${import.meta.env.SPOTIFY_CLIENT_ID}:${
-    import.meta.env.SPOTIFY_CLIENT_SECRET
+  `${import.meta.env.PUBLIC_SPOTIFY_CLIENT_ID}:${
+    import.meta.env.PUBLIC_SPOTIFY_CLIENT_SECRET
   }`
 );
 
@@ -16,7 +16,7 @@ const getAccessToken = async () => {
     },
     body: new URLSearchParams({
       grant_type: "refresh_token",
-      refresh_token: import.meta.env.SPOTIFY_REFRESH_TOKEN,
+      refresh_token: import.meta.env.PUBLIC_SPOTIFY_REFRESH_TOKEN,
     }).toString(),
   });
 
