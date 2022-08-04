@@ -38,16 +38,18 @@ export default function ProjectList() {
           target="_blank"
           rel="noopener noreferrer"
           key={project.id}
-          class="flex justify-between items-center text-white py-16 mix-blend-difference"
+          class="flex flex-col md:flex-row justify-between items-center text-white py-16 mix-blend-difference"
           onMouseEnter={() => setActiveIndex(i)}
           onMouseLeave={() => setActiveIndex(-1)}
         >
-          <div class="flex items-center space-x-8">
+          <div class="flex flex-col md:flex-row items-center md:space-x-8">
             <p>{`0${i + 1} / 0${projects.length}`}</p>
             <p class="font-bold text-2xl">{project.name}</p>
           </div>
 
-          <div class="flex items-center space-x-4">
+          <img src={project.media} alt={project.name} class="block md:hidden my-4 w-full object-cover" />
+
+          <div class="flex items-center space-x-2 md:space-x-4">
             {project.roles.map((role: string, i: number) => (
               <p key={i}>{role}.</p>
             ))}
@@ -56,7 +58,7 @@ export default function ProjectList() {
       ))}
 
       {/* Floating images on hover */}
-      <div className="absolute top-0 left-0 w-full h-full z-[-1]">
+      <div className="absolute hidden md:block top-0 left-0 w-full h-full z-[-1]">
         {photos.map((photo: string, index: number) => {
           const isActive = index === activeIndex;
 
