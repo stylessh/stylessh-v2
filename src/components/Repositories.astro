@@ -7,7 +7,7 @@ const repositories = await getRepositories();
 ---
 
 <article class="flex flex-nowrap items-center w-max py-16 overflow-x-hidden whitespace-nowrap space-x-4 repos">
-    {repositories.map(repository => (
+    {repositories?.map(repository => (
     <a href={repository.svn_url} target="_blank" rel="noopener noreferrer"
         class="bg-[#161616] p-4 h-[150px] min-w-[300px] flex flex-col justify-between rounded-md shadow-sm">
         <header>
