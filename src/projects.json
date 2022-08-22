@@ -15,10 +15,10 @@
   },
   {
     "id": 2,
-    "name": "Demakelij",
-    "url": "https://demakelij.be/configurator/",
-    "roles": ["Fullstack Developer", "Designer", "Lead"],
-    "media": "/assets/projects/demakelij.gif"
+    "name": "Sendero",
+    "url": "https://mosaic-react-one.vercel.app/builder",
+    "roles": ["Frontend Developer"],
+    "media": "/assets/projects/sendero.gif"
   },
   {
     "id": 3,
