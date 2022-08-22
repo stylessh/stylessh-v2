@@ -10,8 +10,6 @@ export default function SpotifyCard() {
         async function getData() {
             const data = await getCurrentListening();
 
-            console.log(data)
-
             if (data) {
                 const info = {
                     isPlaying: data.is_playing,
@@ -21,8 +19,6 @@ export default function SpotifyCard() {
                     albumArt: data.item.album.images[0].url,
                     url: data.item.external_urls.spotify,
                 }
-
-
                 setSong(info)
             }
         }

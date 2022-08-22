@@ -2074,11 +2074,6 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luxy.js@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/luxy.js/-/luxy.js-0.1.0.tgz#43e60e76ccb6431c4fd258484eacdca8b9981352"
-  integrity sha512-G26qu+HjBbZKyIRsgQVxR1dxw7mJ4g7ckqJ/0u8p6og1Lnp7w1rwdaw4jjoAb0UQZGoIzTvU+CGEbCNmJXvyQw==
-
 magic-string@^0.25.9:
   version "0.25.9"
   resolved "https://registry.yarnpkg.com/magic-string/-/magic-string-0.25.9.tgz#de7f9faf91ef8a1c91d02c2e5314c8277dbcdd1c"

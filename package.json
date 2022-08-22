@@ -19,7 +19,6 @@
   "dependencies": {
     "@astrojs/preact": "^0.5.2",
     "astro-compress": "^0.0.15",
-    "luxy.js": "^0.1.0",
     "preact": "^10.10.0"
   }
 }
