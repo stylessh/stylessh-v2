@@ -24,8 +24,8 @@ const Hero = () => {
   useLayoutEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } })
 
-    tl.fromTo(q('h1'), { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
-      .fromTo(q('span'), { y: 50 }, { y: 0, duration: 0.5 }, '-=0.2')
+    tl.fromTo(q('h1'), { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1, delay: 3 })
+      .fromTo(q('span'), { y: 50 }, { y: 0, duration: 1 }, '-=0.5')
 
     return () => {
       tl.kill()
