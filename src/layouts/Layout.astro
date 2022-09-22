@@ -2,92 +2,113 @@
 import "styles/global.css";
 
 import Navbar from "components/Navbar.astro";
-import Scroll from "components/Scroll.astro";
 export interface Props {
-	title: string;
-	description?: string;
+  title: string;
+  description?: string;
 }
 
 const { title, description } = Astro.props as Props;
 
 const DEFAULT_DESC: string =
-	"Hey! I'm Alan (stylessh), a creative Web Developer. Come on and take a look into my projects!";
+  "Hey! I'm Alan (stylessh), a creative Web Developer. Come on and take a look into my projects!";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>{title}</title>
-		<meta name="description" content={description || DEFAULT_DESC} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description || DEFAULT_DESC} />
 
-		<meta name="theme-color" content="#0f0f0f" />
+    <meta name="theme-color" content="#0f0f0f" />
 
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content="Stylessh - Web Developer" />
-		<meta name="twitter:description" content={description || DEFAULT_DESC}
-		/>
-		<meta name="twitter:image:src" content="/img/me.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Stylessh - Web Developer" />
+    <meta name="twitter:description" content={description || DEFAULT_DESC} />
+    <meta name="twitter:image:src" content="/assets/me.webp" />
 
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://stylessh.vercel.app" />
-		<meta property="og:site_name" content="Stylessh" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description || DEFAULT_DESC} />
-		<meta property="og:image" content="/img/me.jpeg" />
-		<meta property="og:type" content="object" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://stylessh.vercel.app" />
+    <meta property="og:site_name" content="Stylessh" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description || DEFAULT_DESC} />
+    <meta property="og:image" content="/assets/me.webp" />
+    <meta property="og:type" content="object" />
 
-		{/* google verify */}
-		<meta
-			name="google-site-verification"
-			content="cwI4oEAnfIPu_QE25dNYyjK_IgyHSe6slCpv19w77Co"
-		/>
+    {/* google verify */}
+    <meta
+      name="google-site-verification"
+      content="cwI4oEAnfIPu_QE25dNYyjK_IgyHSe6slCpv19w77Co"
+    />
 
-		<!-- fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-	<body class="bg-[#111]">
-		<div id="app">
-			<Navbar />
-			<slot />
-		</div>
+  <body class="bg-[#111]">
+    <Navbar />
 
-		<Scroll client:load />
+    <div class="app fixed top-0 left-0">
+      <slot />
+    </div>
 
-		<style is:global lang="scss">
-			#app {
-				display: fixed;
-				width: 100%;
-			}
+    <style is:global lang="scss">
+      #app {
+        display: fixed;
+        width: 100%;
+      }
 
-			::-webkit-scrollbar {
-				width: 8px;
-				background: #111;
-			}
+      ::-webkit-scrollbar {
+        width: 8px;
+        background: #111;
+      }
 
-			::-webkit-scrollbar-thumb {
-				background: #fff;
-			}
+      ::-webkit-scrollbar-thumb {
+        background: #fff;
+      }
 
-			.spotify {
-				&:hover {
-					.card {
-						display: block;
+      .spotify {
+        &:hover {
+          .card {
+            display: block;
 
-						&:hover {
-							display: block;
-						}
-					}
-				}
-			}
-		</style>
-	</body>
+            &:hover {
+              display: block;
+            }
+          }
+        }
+      }
+    </style>
+
+    <!-- scroll -->
+    <script is:inline>
+      const body = document.body,
+        scrollWrap = document.querySelector(".app"),
+        height = scrollWrap.getBoundingClientRect().height - 1,
+        speed = 0.05;
+
+      var offset = 0;
+
+      body.style.height = Math.floor(height) + "px";
+
+      function smoothScroll() {
+        offset += (window.pageYOffset - offset) * speed;
+
+        var scroll = `translate3d(0, -${offset}px, 0)`;
+
+        scrollWrap.style.transform = scroll;
+
+        requestAnimationFrame(smoothScroll);
+      }
+
+      smoothScroll();
+    </script>
+  </body>
 </html>
