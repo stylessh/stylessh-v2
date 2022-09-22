@@ -2,6 +2,7 @@
 import "styles/global.css";
 
 import Navbar from "components/Navbar.astro";
+import Welcome from "components/Welcome";
 export interface Props {
   title: string;
   description?: string;
@@ -54,6 +55,8 @@ const DEFAULT_DESC: string =
 
   <body class="bg-[#111]">
     <Navbar />
+
+    <Welcome client:load/>
 
     <div class="app fixed top-0 left-0">
       <slot />

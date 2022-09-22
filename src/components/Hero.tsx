@@ -57,7 +57,7 @@ const Hero = () => {
 
   return (
     <section class="h-screen flex items-end w-[90%] mx-auto py-32 md:py-16 relative" ref={heroRef}>
-      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold leading-tight">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold !leading-tight">
         Hey There! I'm Alan Daniel. <br /> Creative <span class={`text-blue-500 transition-opacity ${selected === 'webdev' ? "opacity-100" : "opacity-30"}`} onMouseEnter={() => handleEnterShowcase('webdev')}>Web Developer</span>
         <br /> and <span class={`text-amber-500 transition-opacity ${selected === 'guitarist' ? "opacity-100" : "opacity-30"}`} onMouseEnter={() => handleEnterShowcase('guitarist')}>Guitarist</span>.
       </h1>
