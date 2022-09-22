@@ -1,5 +1,4 @@
-robots.txt
-
 User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
+Allow: /
+
+Sitemap: https://stylessh-v2.vercel.app/sitemap.xml
