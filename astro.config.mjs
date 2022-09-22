@@ -6,7 +6,7 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact(), tailwind(), compress()],
+  integrations: [preact(), tailwind(), compress({ img: false })],
 
   experimental: {
     integrations: true,
