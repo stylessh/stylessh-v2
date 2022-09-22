@@ -1,21 +1,20 @@
 ---
 import Layout from "layouts/Layout.astro";
 
-import Hero from "components/Hero.astro";
+import Hero from "components/Hero";
 import About from "components/About.astro";
 import Projects from "components/Projects.astro";
 import Contact from "components/Contact.astro";
 import Footer from "components/Footer.astro";
-
 ---
 
 <Layout title="stylessh dev">
-	<main class="min-h-screen overflow-x-hidden" id="app">
-		<Hero />
-		<About />
-		<Projects />
-		<Contact />
+  <main class="min-h-screen overflow-x-hidden" id="app">
+    <Hero client:load/>
+    <About />
+    <Projects />
+    <Contact />
 
-		<Footer />
-	</main>
+    <Footer />
+  </main>
 </Layout>

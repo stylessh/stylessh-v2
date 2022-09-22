@@ -2,21 +2,21 @@
 import SpotifyCard from "./SpotifyCard";
 ---
 
-<nav class="absolute text-white z-50 w-[90%] mx-auto top-0 left-0 right-0 py-8 flex items-center justify-between">
-    <h1 class="font-bold">
-        <a href="/">stylessh</a>
-    </h1>
+<nav
+  class="absolute text-white z-50 w-[90%] mx-auto top-0 left-0 right-0 py-8 flex items-center justify-between"
+>
+  <h3 class="font-bold title">
+    <a href="/">stylessh</a>
+  </h3>
 
-    <ul class="flex items-center space-x-6 text-sm md:text-base">
+  <ul class="flex items-center space-x-6 text-sm md:text-base">
+    <SpotifyCard client:load />
 
-        <SpotifyCard client:load />
-
-
-        <li>
-            <a href="/posts">posts.</a>
-        </li>
-        <li>
-            <a href="/snippets">snippets.</a>
-        </li>
-    </ul>
+    <li>
+      <a href="/posts">posts.</a>
+    </li>
+    <li>
+      <a href="/snippets">snippets.</a>
+    </li>
+  </ul>
 </nav>
