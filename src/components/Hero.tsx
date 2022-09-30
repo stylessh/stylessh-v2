@@ -33,11 +33,13 @@ const Hero = () => {
   }, [])
 
   const playAudioShowcase = (showcase: string) => {
-    // if showcase is already selected, stop audio
-    audioRef.current.pause();
+    // if different showcase is selected, stop audio
+    if (selected !== showcase) {
+      audioRef.current.pause();
 
-    audioRef.current.src = `./assets/${showcase}.mp3`;
-    audioRef.current.play()
+      audioRef.current.src = `./assets/${showcase}.mp3`;
+      audioRef.current.play()
+    }
   }
 
   const handleEnterShowcase = (showcase: string) => {
