@@ -3,5 +3,5 @@ export const getRepositories = async (): Promise<any> => {
     "https://api.github.com/users/stylessh/repos?per_page=50"
   ).then((res) => res.json());
 
-  return [];
+  return data;
 };

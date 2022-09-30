@@ -58,7 +58,7 @@ const DEFAULT_DESC: string =
 
     <Welcome client:load />
 
-    <div class="app">
+    <div>
       <slot />
     </div>
 
@@ -84,55 +84,5 @@ const DEFAULT_DESC: string =
         }
       }
     </style>
-
-    <!-- scroll -->
-    <script is:inline>
-      const body = document.body,
-        scrollWrap = document.querySelector(".app"),
-        height = scrollWrap.getBoundingClientRect().height - 1,
-        speed = 0.05;
-
-      var offset = 0;
-      var animationId;
-
-      function smoothScroll() {
-        offset += (window.pageYOffset - offset) * speed;
-
-        var scroll = `translate3d(0, -${offset}px, 0)`;
-
-        scrollWrap.style.transform = scroll;
-
-        animationId = requestAnimationFrame(smoothScroll);
-      }
-
-      if (body.clientWidth <= 768) {
-        body.style.height = "auto";
-        scrollWrap.setAttribute("style", "");
-        cancelAnimationFrame(animationId);
-      } else {
-        body.style.height = Math.floor(height) + "px";
-        scrollWrap.style.position = "fixed";
-        scrollWrap.style.left = "0";
-        scrollWrap.style.right = "0";
-
-        smoothScroll();
-      }
-
-      // watch screen size
-      window.addEventListener("resize", () => {
-        if (body.clientWidth <= 768) {
-          body.style.height = "auto";
-          scrollWrap.setAttribute("style", "");
-          cancelAnimationFrame(animationId);
-        } else {
-          body.style.height = Math.floor(height) + "px";
-          scrollWrap.style.position = "fixed";
-          scrollWrap.style.left = "0";
-          scrollWrap.style.right = "0";
-
-          smoothScroll();
-        }
-      });
-    </script>
   </body>
 </html>
