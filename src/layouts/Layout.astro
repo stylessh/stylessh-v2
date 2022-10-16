@@ -1,4 +1,5 @@
 ---
+import "locomotive-scroll/dist/locomotive-scroll.css";
 import "styles/global.css";
 
 import Navbar from "components/Navbar.astro";
@@ -60,20 +61,11 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 
     {!isDev && <Welcome client:load />}
 
-    <div>
+    <div data-scroll-container>
       <slot />
     </div>
 
     <style is:global lang="scss">
-      ::-webkit-scrollbar {
-        width: 8px;
-        background: #111;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: #fff;
-      }
-
       .spotify {
         &:hover {
           .card {
@@ -88,3 +80,14 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
     </style>
   </body>
 </html>
+
+<script>
+  import LocomotiveScroll from "locomotive-scroll";
+
+  new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+    lerp: 0.05,
+    multiplier: 0.5,
+  });
+</script>

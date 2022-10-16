@@ -32,7 +32,11 @@ export default function ProjectList() {
   }, []);
 
   return (
-    <div class="w-[90%] mx-auto py-8 relative">
+    <div
+      class="w-[90%] mx-auto py-8 relative"
+      data-scroll
+      data-scroll-speed="1.2"
+    >
       {projects.map((project: IProject, i: number) => (
         <a
           href={project.url}

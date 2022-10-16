@@ -20,6 +20,7 @@
     "@astrojs/preact": "^0.5.2",
     "astro-compress": "^0.0.15",
     "gsap": "^3.11.1",
+    "locomotive-scroll": "^4.1.4",
     "preact": "^10.10.0"
   }
 }
