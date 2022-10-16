@@ -12,6 +12,8 @@ const { title, description } = Astro.props as Props;
 
 const DEFAULT_DESC: string =
   "Hey! I'm Alan (stylessh), a creative Web Developer. Come on and take a look into my projects!";
+
+const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 ---
 
 <!DOCTYPE html>
@@ -56,7 +58,7 @@ const DEFAULT_DESC: string =
   <body class="bg-[#111]">
     <Navbar />
 
-    <Welcome client:load />
+    {!isDev && <Welcome client:load />}
 
     <div>
       <slot />

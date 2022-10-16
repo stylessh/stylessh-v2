@@ -1,5 +1,6 @@
 import { h } from "preact";
 import { useEffect, useState } from "preact/hooks";
+import { gsap } from "gsap";
 
 import projects from "projects.json";
 
@@ -47,7 +48,11 @@ export default function ProjectList() {
             <p class="font-bold text-2xl">{project.name}</p>
           </div>
 
-          <img src={project.media} alt={project.name} class="block md:hidden my-4 w-full object-cover" />
+          <img
+            src={project.media}
+            alt={project.name}
+            class="block md:hidden my-4 w-full object-cover"
+          />
 
           <div class="flex items-center space-x-2 md:space-x-4">
             {project.roles.map((role: string, i: number) => (
@@ -68,15 +73,17 @@ export default function ProjectList() {
           return (
             <img
               src={photo}
+              ref={(el: HTMLImageElement) => {
+                if (el)
+                  gsap.set(el, {
+                    x: xPos - (el.offsetWidth + 150) / 2,
+                    y: yPos - (el.offsetHeight + 50) / 2,
+                  });
+              }}
               alt="Work Image"
-              className={`absolute w-[900px] h-[700px] object-contain pointer-events-none ${
+              className={`absolute scale-75 pointer-events-none select-none rounded-md ${
                 isActive ? "opacity-100" : "opacity-0"
               }`}
-              style={{
-                transform: `translateX(${xPos - 1000 / 2}px) translateY(${
-                  yPos - 700 / 2
-                }px)`,
-              }}
               key={index}
             />
           );
