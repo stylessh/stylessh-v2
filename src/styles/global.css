@@ -6,14 +6,6 @@ html {
   overflow: hidden;
 }
 
-.body {
-  overscroll-behavior-y: none;
-}
-
-.c-scrollbar {
-  height: 100%;
-}
-
 .c-scrollbar_thumb {
   background-color: #fff;
 }

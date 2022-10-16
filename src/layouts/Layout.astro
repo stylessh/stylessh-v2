@@ -18,7 +18,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -26,7 +26,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
     <title>{title}</title>
     <meta name="description" content={description || DEFAULT_DESC} />
 
-    <meta name="theme-color" content="#0f0f0f" />
+    <meta name="theme-color" content="#111" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Stylessh - Web Developer" />
@@ -34,7 +34,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
     <meta name="twitter:image:src" content="/assets/me.webp" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://stylessh.vercel.app" />
+    <meta property="og:url" content="https://stylessh-v2.vercel.app" />
     <meta property="og:site_name" content="Stylessh" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description || DEFAULT_DESC} />
@@ -89,5 +89,13 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
     smooth: true,
     lerp: 0.05,
     multiplier: 0.5,
+
+    smartphone: {
+      smooth: true,
+    },
+
+    tablet: {
+      smooth: true,
+    },
   });
 </script>
