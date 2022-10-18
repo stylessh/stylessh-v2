@@ -64,14 +64,16 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
     <div data-scroll-container>
       <slot />
     </div>
-
+    
     <style is:global lang="scss">
       .spotify {
-        &:hover {
+        &:hover,
+        &:focus {
           .card {
             display: block;
 
-            &:hover {
+            &:hover,
+            &:focus {
               display: block;
             }
           }
@@ -92,12 +94,12 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 
     smartphone: {
       smooth: true,
-      multiplier: 1,
+      multiplier: 1.4,
     },
 
     tablet: {
       smooth: true,
-      multiplier: 1,
+      multiplier: 1.4,
     },
   });
 </script>

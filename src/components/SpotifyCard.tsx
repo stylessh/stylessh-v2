@@ -34,7 +34,7 @@ export default function SpotifyCard() {
             <p class="hidden md:block">listening to...</p>
             <p class="md:hidden">sp.</p>
 
-            <article class="card absolute top-full left-0 md:left-auto right-0 w-full md:w-max pt-4 text-white hidden">
+            <article class="card absolute top-full left-0 md:left-auto right-0 w-full md:w-[450px] pt-4 text-white hidden">
                 <a href={song.url} rel="noreferrer" target="_blank" class="p-4 bg-[#161616] flex items-center rounded-md">
                     <img src={song.albumArt} alt="Album art" class="h-24 w-24 mr-4" />
 
