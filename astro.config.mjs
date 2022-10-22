@@ -11,10 +11,4 @@ export default defineConfig({
   experimental: {
     integrations: true,
   },
-
-  vite: {
-    optimizeDeps: {
-      include: ["react"],
-    },
-  },
 });

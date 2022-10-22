@@ -15,20 +15,20 @@ const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  const q = gsap.utils.selector(heroRef);
-
   useEffect(() => {
     audioRef.current = new Audio();
   }, []);
 
   useLayoutEffect(() => {
+    const q = gsap.utils.selector(heroRef);
+
     const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
 
     tl.fromTo(
       q("h1"),
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, delay: 3 }
-    ).fromTo(q("span"), { y: 50 }, { y: 0, duration: 1 }, "-=0.5");
+    );
 
     return () => {
       tl.kill();
@@ -70,21 +70,21 @@ const Hero = () => {
       <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold !leading-tight">
         Hey There! I'm Alan Daniel. <br /> Creative{" "}
         <span
-          class={`text-blue-500 transition-opacity ${
+          class={`text-blue-500 transition-opacity cursor-pointer ${
             selected === "webdev" ? "opacity-100" : "opacity-30"
-          }`}
+          } hover:opacity-50`}
           onTouchStart={() => handleEnterShowcase("webdev")}
-          onMouseEnter={() => handleEnterShowcase("webdev")}
+          onClick={() => handleEnterShowcase("webdev")}
         >
           Web Developer
         </span>
         <br /> and{" "}
         <span
-          class={`text-amber-500 transition-opacity ${
+          class={`text-amber-500 transition-opacity cursor-pointer ${
             selected === "guitarist" ? "opacity-100" : "opacity-30"
-          }`}
+          } hover:opacity-50`}
           onTouchStart={() => handleEnterShowcase("guitarist")}
-          onMouseEnter={() => handleEnterShowcase("guitarist")}
+          onClick={() => handleEnterShowcase("guitarist")}
         >
           Guitarist
         </span>
