@@ -66,6 +66,7 @@ const Hero = () => {
       ref={heroRef}
       data-scroll
       data-scroll-speed="1.2"
+      data-scroll-id=""
     >
       <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold !leading-tight">
         Hey There! I'm Alan Daniel. <br /> Creative{" "}

@@ -58,7 +58,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
     <div data-scroll-container>
       <slot />
     </div>
-    
+
     <style is:global lang="scss">
       .spotify {
         &:hover,
@@ -79,8 +79,9 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 
 <script>
   import LocomotiveScroll from "locomotive-scroll";
+  import { setState } from "utils/getCurrentSection";
 
-  new LocomotiveScroll({
+  const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
     lerp: 0.05,
@@ -97,5 +98,20 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
       lerp: 0.1,
       multiplier: 1,
     },
+  });
+
+  const sections = ["", "about", "projects", "contact"];
+
+  scroll.on("scroll", (args) => {
+    sections.forEach((sect) => {
+      const container = args.currentElements[sect];
+      const exists = typeof container != "undefined";
+
+      console.log(args);
+
+      if (exists && container.inView) {
+        setState({ activeSection: sect ? `${sect}.` : "" });
+      }
+    });
   });
 </script>
