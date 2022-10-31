@@ -71,7 +71,7 @@ const Hero = () => {
       <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold !leading-tight">
         Hey There! I'm Alan Daniel. <br /> Creative{" "}
         <span
-          class={`text-blue-500 transition-opacity cursor-pointer ${
+          class={`text-blue-500 transition-opacity cursor-pointer showcase-line ${
             selected === "webdev" ? "opacity-100" : "opacity-30"
           } hover:opacity-50`}
           onTouchStart={() => handleEnterShowcase("webdev")}
@@ -81,7 +81,7 @@ const Hero = () => {
         </span>
         <br /> and{" "}
         <span
-          class={`text-amber-500 transition-opacity cursor-pointer ${
+          class={`text-amber-500 transition-opacity cursor-pointer showcase-line ${
             selected === "guitarist" ? "opacity-100" : "opacity-30"
           } hover:opacity-50`}
           onTouchStart={() => handleEnterShowcase("guitarist")}

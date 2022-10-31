@@ -4,6 +4,7 @@ import "styles/global.css";
 
 import Navbar from "components/Navbar.astro";
 import Welcome from "components/Welcome";
+import Cursor from "components/Cursor.astro";
 export interface Props {
   title: string;
   description?: string;
@@ -59,6 +60,8 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
       <slot />
     </div>
 
+    <Cursor />
+
     <style is:global lang="scss">
       .spotify {
         &:hover,
@@ -107,11 +110,8 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
       const container = args.currentElements[sect];
       const exists = typeof container != "undefined";
 
-      console.log(args);
-
-      if (exists && container.inView) {
+      if (exists && container.inView)
         setState({ activeSection: sect ? `${sect}.` : "" });
-      }
     });
   });
 </script>

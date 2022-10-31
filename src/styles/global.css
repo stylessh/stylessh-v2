@@ -9,3 +9,7 @@ html {
 .c-scrollbar_thumb {
   background-color: #fff;
 }
+
+.cursor--highlight {
+  opacity: 0.2;
+}

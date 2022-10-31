@@ -1,0 +1,65 @@
+<div
+  class="h-4 w-4 bg-white opacity-50 absolute top-0 left-0 -z-10 rounded-full cursor select-none pointer-events-none hidden sm:block transition-opacity"
+>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  const cursor = document.querySelector(".cursor") as HTMLDivElement;
+  const highlightEls = ["a", ".c-scrollbar", ".showcase-line"];
+
+  // check screen size
+  let isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  const cursorMove = (e) => {
+    cursor.style.zIndex = "100";
+
+    // move mouse
+    gsap.set(cursor, {
+      x: e.x - cursor.offsetWidth / 2,
+      y: e.y - cursor.offsetHeight / 2,
+
+      delay: 0.07,
+    });
+
+    // highlight on hover elements
+    highlightEls.forEach((el) => {
+      const elements = document.querySelectorAll(el);
+
+      elements.forEach((element) => {
+        element.addEventListener("mouseover", () => {
+          cursor.classList.add("cursor--highlight");
+
+          gsap.to(cursor, {
+            scale: 2,
+            duration: 0.2,
+          });
+        });
+
+        element.addEventListener("mouseleave", () => {
+          cursor.classList.remove("cursor--highlight");
+
+          gsap.to(cursor, {
+            scale: 1,
+            duration: 0.2,
+
+            ease: "power2.inOut",
+          });
+        });
+      });
+    });
+  };
+
+  // window resize event
+  window.addEventListener("resize", () => {
+    isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      document.removeEventListener("mousemove", cursorMove);
+    } else {
+      document.addEventListener("mousemove", cursorMove);
+    }
+  });
+
+  if (!isMobile) document.addEventListener("mousemove", cursorMove);
+</script>
