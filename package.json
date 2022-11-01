@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^0.2.5",
+    "@types/three": "^0.144.0",
     "astro": "^1.0.0-rc.4",
     "autoprefixer": "^10.4.8",
     "postcss": "^8.4.14",
@@ -22,6 +23,7 @@
     "gsap": "^3.11.1",
     "locomotive-scroll": "^4.1.4",
     "preact": "^10.10.0",
+    "three": "^0.146.0",
     "zustand": "^4.1.3"
   }
 }

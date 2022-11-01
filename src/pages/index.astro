@@ -6,12 +6,15 @@ import About from "components/About.astro";
 import Projects from "components/Projects.astro";
 import Contact from "components/Contact.astro";
 import Footer from "components/Footer.astro";
+import Canvas from "components/Canvas.astro";
 ---
 
 <Layout title="stylessh dev">
   <main class="min-h-screen overflow-hidden">
     {/* Layer bg */}
     <div class="fixed inset-0 w-full h-full -z-10 opacity-5 layer"></div>
+
+    <Canvas />
 
     <Hero client:load />
     <About />

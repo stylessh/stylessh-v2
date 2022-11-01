@@ -4,7 +4,7 @@ import "styles/global.css";
 
 import Navbar from "components/Navbar.astro";
 import Welcome from "components/Welcome";
-import Cursor from "components/Cursor.astro";
+// import Cursor from "components/Cursor.astro";
 export interface Props {
   title: string;
   description?: string;
@@ -60,9 +60,15 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
       <slot />
     </div>
 
-    <Cursor />
-
     <style is:global lang="scss">
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -10;
+        pointer-events: none;
+      }
+
       .spotify {
         &:hover,
         &:focus {
@@ -104,6 +110,8 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
   });
 
   const sections = ["", "about", "projects", "contact"];
+
+  window["locomotiveScroll"] = scroll;
 
   scroll.on("scroll", (args) => {
     sections.forEach((sect) => {
