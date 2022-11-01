@@ -54,11 +54,8 @@
   window.addEventListener("resize", () => {
     isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    if (isMobile) {
-      document.removeEventListener("mousemove", cursorMove);
-    } else {
-      document.addEventListener("mousemove", cursorMove);
-    }
+    if (isMobile) cursor.style.display = "none";
+    else cursor.style.display = "block";
   });
 
   if (!isMobile) document.addEventListener("mousemove", cursorMove);

@@ -67,25 +67,24 @@ export default function ProjectList() {
       ))}
 
       {/* Floating images on hover */}
-      <div className="absolute hidden md:block top-0 left-0 w-full h-full z-[-1]">
+      <div
+        ref={(el: HTMLDivElement) => {
+          if (el)
+            gsap.set(el, {
+              x: mousePos.x - (el.offsetWidth + 150) / 2,
+              y: mousePos.y - (el.offsetHeight + 50) / 2,
+            });
+        }}
+        className="absolute hidden md:block top-0 left-0 w-full h-full z-[-1]"
+      >
         {photos.map((photo: string, index: number) => {
           const isActive = index === activeIndex;
-
-          const xPos = isActive ? mousePos.x : 0;
-          const yPos = isActive ? mousePos.y : 0;
 
           return (
             <img
               src={photo}
-              ref={(el: HTMLImageElement) => {
-                if (el)
-                  gsap.set(el, {
-                    x: xPos - (el.offsetWidth + 150) / 2,
-                    y: yPos - (el.offsetHeight + 50) / 2,
-                  });
-              }}
               alt="Work Image"
-              className={`absolute scale-75 pointer-events-none select-none rounded-md ${
+              className={`absolute scale-75 pointer-events-none select-none rounded-md transition-opacity ${
                 isActive ? "opacity-100" : "opacity-0"
               }`}
               key={index}
