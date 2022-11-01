@@ -16,7 +16,7 @@ export interface IProject {
 const photos = projects.map((p) => p.media);
 
 export default function ProjectList() {
-  const [activeIndex, setActiveIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const updateMousePos = (e) => {
@@ -31,12 +31,20 @@ export default function ProjectList() {
     };
   }, []);
 
+  const handleMouseEnter = (index: number) => {
+    setActiveIndex(index);
+
+    // body color change
+    gsap.to(".layer", {
+      backgroundColor: projects[index]?.accent || "transparent",
+      duration: 0.2,
+
+      ease: "power2.inOut",
+    });
+  };
+
   return (
-    <div
-      class="w-[90%] mx-auto py-8 relative"
-      data-scroll
-      data-scroll-speed="1.2"
-    >
+    <div class="w-[90%] mx-auto py-8" data-scroll data-scroll-speed="1.2">
       {projects.map((project: IProject, i: number) => (
         <a
           href={project.url}
@@ -44,8 +52,8 @@ export default function ProjectList() {
           rel="noopener noreferrer"
           key={project.id}
           class="flex flex-col md:flex-row justify-between items-center text-white py-16 mix-blend-difference"
-          onMouseEnter={() => setActiveIndex(i)}
-          onMouseLeave={() => setActiveIndex(-1)}
+          onMouseEnter={() => handleMouseEnter(i)}
+          onMouseLeave={() => handleMouseEnter(-1)}
         >
           <div class="flex flex-col md:flex-row items-center md:space-x-8">
             <p>{`0${i + 1} / 0${projects.length}`}</p>

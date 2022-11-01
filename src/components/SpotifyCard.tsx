@@ -30,7 +30,7 @@ export default function SpotifyCard() {
     if (!song) return null
 
     return (
-        <li class="text-green-500 md:relative cursor-pointer spotify">
+        <div class="text-green-500 md:relative cursor-pointer spotify">
             <p class="hidden md:block">listening to...</p>
             <p class="md:hidden">sp.</p>
 
@@ -44,6 +44,6 @@ export default function SpotifyCard() {
                     </div>
                 </a>
             </article>
-        </li>
+        </div>
     )
 }

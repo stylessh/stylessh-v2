@@ -10,7 +10,10 @@ import Footer from "components/Footer.astro";
 
 <Layout title="stylessh dev">
   <main class="min-h-screen overflow-hidden">
-    <Hero client:load/>
+    {/* Layer bg */}
+    <div class="fixed inset-0 w-full h-full -z-10 opacity-5 layer"></div>
+
+    <Hero client:load />
     <About />
     <Projects />
     <Contact />
