@@ -6,7 +6,12 @@ html {
   overflow: hidden;
 }
 
+.c-scrollbar {
+  @apply m-1;
+}
+
 .c-scrollbar_thumb {
+  left: 0;
   background-color: #fff;
 }
 

@@ -18,9 +18,10 @@
   });
 
   renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
   document.body.appendChild(renderer.domElement);
 
-  camera.position.y = 10;
+  camera.position.y = 0;
 
   // add fog
   scene.fog = new THREE.Fog(0x111111, 0.1, 5);
@@ -49,6 +50,7 @@
   const mouse = new THREE.Vector2();
 
   function onMouseMove(event: MouseEvent) {
+    // calculate mouse position in normalized device coordinates
     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 

@@ -15,12 +15,8 @@
     cursor.style.zIndex = "100";
 
     // move mouse
-    gsap.set(cursor, {
-      x: e.x - cursor.offsetWidth / 2,
-      y: e.y - cursor.offsetHeight / 2,
-
-      delay: 0.07,
-    });
+    cursor.style.top = `${e.clientY - cursor.offsetHeight / 2}px`;
+    cursor.style.left = `${e.clientX - cursor.offsetWidth / 2}px`;
 
     // highlight on hover elements
     highlightEls.forEach((el) => {

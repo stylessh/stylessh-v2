@@ -88,7 +88,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 
 <script>
   import LocomotiveScroll from "locomotive-scroll";
-  import { setState } from "utils/getCurrentSection";
+  import { setState, getState } from "utils/getCurrentSection";
 
   const scroll = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
@@ -118,7 +118,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
       const container = args.currentElements[sect];
       const exists = typeof container != "undefined";
 
-      if (exists && container.inView)
+      if (exists && container.inView && getState().activeSection != sect)
         setState({ activeSection: sect ? `${sect}.` : "" });
     });
   });
