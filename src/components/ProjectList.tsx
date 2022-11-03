@@ -19,7 +19,7 @@ export default function ProjectList() {
   const [activeIndex, setActiveIndex] = useState<number>(-1);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  const updateMousePos = (e) => {
+  const updateMousePos = (e: MouseEvent) => {
     setMousePos({ x: e.x, y: e.y });
   };
 
@@ -79,8 +79,8 @@ export default function ProjectList() {
         ref={(el: HTMLDivElement) => {
           if (el)
             gsap.set(el, {
-              x: mousePos.x - (el.offsetWidth + 150) / 2,
-              y: mousePos.y - (el.offsetHeight + 50) / 2,
+              x: mousePos.x - el.offsetWidth / 2,
+              y: mousePos.y - el.offsetHeight / 2,
             });
         }}
         className="absolute hidden md:block top-0 left-0 w-full h-full z-[-1]"
