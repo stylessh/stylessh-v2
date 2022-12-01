@@ -8,5 +8,8 @@ module.exports = {
 
     extend: {},
   },
+
+  whitelist: ["hover:-translate-y-1"],
+
   plugins: [],
 };

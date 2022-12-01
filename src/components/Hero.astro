@@ -1,0 +1,47 @@
+<section
+  class="h-screen flex flex-col justify-center w-[90%] mx-auto py-16 relative"
+  data-scroll
+  data-scroll-speed="1.2"
+>
+  <h1
+    class="text-2xl sm:text-[8vw] text-white font-bold !leading-tight eslogan relative"
+  >
+    Alan Daniel. Creative Developer.
+  </h1>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  // animate hero
+
+  gsap.from(".title", {
+    opacity: 0,
+    duration: 1,
+    ease: "power4.out",
+    delay: 2.5,
+  });
+
+  gsap.from(".eslogan", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    delay: 3,
+    ease: "power4.out",
+  });
+
+  // invert letter on hover hero
+
+  const title = document.querySelector(".eslogan");
+
+  // each letter in a span
+  const letters = title.textContent.split("");
+  title.textContent = "";
+
+  letters.forEach((letter) => {
+    const span = document.createElement("span");
+    span.textContent = letter;
+    span.classList.add("hover:-translate-y-1");
+    title.append(span);
+  });
+</script>
