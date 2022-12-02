@@ -2,6 +2,7 @@
   class="h-screen flex flex-col justify-center w-[90%] mx-auto py-16 relative"
   data-scroll
   data-scroll-speed="1.2"
+  data-scroll-id
 >
   <h1
     class="text-2xl sm:text-[8vw] text-white font-bold !leading-tight eslogan relative"
@@ -41,7 +42,30 @@
   letters.forEach((letter) => {
     const span = document.createElement("span");
     span.textContent = letter;
-    span.classList.add("hover:-translate-y-1");
+    span.classList.add("letter");
     title.append(span);
+  });
+
+  const lettersSpans = document.querySelectorAll(".letter");
+
+  lettersSpans.forEach((span) => {
+    span.addEventListener("mouseenter", (e) => {
+      gsap.to(e.target, {
+        duration: 0.5,
+        color: "#111",
+        backgroundColor: "#fff",
+        ease: "power4.out",
+      });
+    });
+
+    span.addEventListener("mouseleave", (e) => {
+      gsap.to(e.target, {
+        duration: 0.5,
+        color: "#fff",
+        backgroundColor: "transparent",
+        ease: "power4.out",
+        delay: 0.5,
+      });
+    });
   });
 </script>

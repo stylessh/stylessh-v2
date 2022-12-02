@@ -23,7 +23,6 @@
     "gsap": "^3.11.1",
     "locomotive-scroll": "^4.1.4",
     "preact": "^10.10.0",
-    "three": "^0.146.0",
     "zustand": "^4.1.3"
   }
 }
