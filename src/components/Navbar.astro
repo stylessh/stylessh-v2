@@ -1,11 +1,12 @@
 ---
 import SpotifyCard from "./SpotifyCard";
+import Logo from "ui/Logo.astro";
 ---
 
 <nav
-  class="absolute text-white z-50 w-[90%] mx-auto top-0 left-0 right-0 py-8 flex items-center justify-between"
+  class="absolute text-white z-50 w-[90%] mx-auto top-0 left-0 right-0 py-4 flex items-center justify-between"
 >
-  <h3 class="font-bold title">stylessh</h3>
+  <Logo />
 
   <div class="flex items-center space-x-6 text-sm md:text-base">
     <SpotifyCard client:load />
