@@ -44,12 +44,18 @@ export default function ProjectList() {
   };
 
   return (
-    <div class="w-[90%] mx-auto py-8" data-scroll data-scroll-speed="1.2">
+    <ul
+      class="w-[90%] mx-auto py-8"
+      data-scroll
+      data-scroll-speed="1.2"
+      role="list"
+    >
       {projects.map((project: IProject, i: number) => (
         <a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
+          role="item"
           key={project.id}
           class="flex flex-col md:flex-row justify-between items-center text-white py-16 mix-blend-difference"
           onMouseEnter={() => handleMouseEnter(i)}
@@ -100,6 +106,6 @@ export default function ProjectList() {
           );
         })}
       </div>
-    </div>
+    </ul>
   );
 }

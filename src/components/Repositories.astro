@@ -11,7 +11,7 @@ const repositories = await getRepositories();
   data-scroll-speed="0.8"
 >
   {
-    repositories?.map((repository) => (
+    repositories?.map((repository: any) => (
       <a
         href={repository.svn_url}
         target="_blank"
