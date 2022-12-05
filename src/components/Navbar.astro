@@ -6,7 +6,10 @@ import Logo from "ui/Logo.astro";
 <nav
   class="absolute text-white z-50 w-[90%] mx-auto top-0 left-0 right-0 py-4 flex items-center justify-between"
 >
-  <Logo />
+  <div class="flex items-center group">
+    <Logo />
+    <p class="font-bold text-2xl -ml-2 translate-y-4 opacity-0 select-none group-hover:opacity-100 group-hover:translate-y-0 transition">tylessh</p>
+  </div>
 
   <div class="flex items-center space-x-6 text-sm md:text-base">
     <SpotifyCard client:load />
