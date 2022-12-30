@@ -1,5 +1,13 @@
 [
   {
+    "id": 0,
+    "name": "SliceTube",
+    "url": "https://slicetube.io/",
+    "roles": ["Fullstack Developer"],
+    "media": "/assets/projects/slicetube.gif",
+    "accent": "#6365e7"
+  },
+  {
     "id": 2,
     "name": "Snapit",
     "url": "https://snapit.gg/",
@@ -14,14 +22,6 @@
     "roles": ["Fullstack Developer", "Lead"],
     "media": "/assets/projects/mahalo.gif",
     "accent": "#c567a1"
-  },
-  {
-    "id": 0,
-    "name": "Trackify",
-    "url": "https://trackify.vercel.app/",
-    "roles": ["Frontend Developer", "Designer"],
-    "media": "/assets/projects/trackify.gif",
-    "accent": "#f2e1c2"
   },
   {
     "id": 1,
