@@ -4,7 +4,6 @@ import "styles/global.css";
 
 import Navbar from "components/Navbar.astro";
 import Welcome from "components/Welcome.astro";
-// import Cursor from "components/Cursor.astro";
 export interface Props {
   title: string;
   description?: string;
@@ -56,19 +55,11 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
 
     {!isDev && <Welcome client:load />}
 
-    <div data-scroll-container>
+    <main data-scroll-container>
       <slot />
-    </div>
+    </main>
 
     <style is:global lang="scss">
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -10;
-        pointer-events: none;
-      }
-
       .spotify {
         &:hover,
         &:focus {
@@ -83,20 +74,6 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
         }
       }
     </style>
-
-    <!-- BMC Script -->
-    <script
-      data-name="BMC-Widget"
-      data-cfasync="false"
-      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-      data-id="stylesshdev"
-      data-description="Support me on Buy me a coffee!"
-      data-message="Thanks for coming to my space. Feel free to buy a coffee for us!"
-      data-color="#40DCA5"
-      data-position="Right"
-      data-x_margin="32"
-      data-y_margin="32"
-    ></script>
   </body>
 </html>
 
