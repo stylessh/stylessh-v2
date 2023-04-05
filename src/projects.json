@@ -25,10 +25,10 @@
   },
   {
     "id": 1,
-    "name": "TakeNote",
-    "url": "https://takenote-delta.vercel.app/",
-    "roles": ["Fullstack Developer", "Designer"],
-    "media": "/assets/projects/takenote.gif",
-    "accent": "#318efb"
+    "name": "Blockhack",
+    "url": "https://blockhack.vercel.app/",
+    "roles": ["Frontend Developer", "Technical Lead"],
+    "media": "/assets/projects/blockhack.gif",
+    "accent": "#bfff0a"
   }
 ]
