@@ -11,10 +11,5 @@ html {
 }
 
 .c-scrollbar_thumb {
-  left: 0;
-  background-color: #fff;
-}
-
-.cursor--highlight {
-  opacity: 0.2;
+  @apply !bg-white;
 }

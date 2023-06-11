@@ -1,21 +1,23 @@
 <section
-  class="h-screen flex flex-col justify-center w-[90%] mx-auto py-16 relative"
+  class="h-screen flex flex-col justify-center w-[90%] mx-auto py-16 relative text-center md:text-left"
   data-scroll
   data-scroll-speed="1.2"
   data-scroll-id
 >
   <h1
-    class="text-2xl sm:text-[8vw] text-white font-bold !leading-tight eslogan relative"
+    class="text-4xl md:text-[8vw] text-white font-bold !leading-tight eslogan relative"
   >
-    Alan Daniel. Creative Developer.
+    Alan Daniel
   </h1>
+  <p class="relative mt-4 text-white md:text-right md:text-2xl eslogan">
+    Software Developer
+  </p>
 </section>
 
 <script>
   import { gsap } from "gsap";
 
   // animate hero
-
   gsap.from(".title", {
     opacity: 0,
     duration: 1,
@@ -29,6 +31,7 @@
     duration: 1,
     delay: 3,
     ease: "power4.out",
+    stagger: 0.2,
   });
 
   // invert letter on hover hero
