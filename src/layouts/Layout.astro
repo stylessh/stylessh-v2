@@ -53,7 +53,7 @@ const isDev = import.meta.env.PUBLIC_ENV !== "prod";
   <body class="bg-[#111]">
     <Navbar />
 
-    {!isDev && <Welcome client:load />}
+    {!isDev && <Welcome />}
 
     <main data-scroll-container>
       <slot />
