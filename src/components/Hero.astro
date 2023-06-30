@@ -1,17 +1,18 @@
 <section
-  class="h-screen flex flex-col justify-center w-[90%] mx-auto py-16 relative text-center md:text-left"
+  class="h-screen flex flex-col-reverse md:flex-col gap-y-6 justify-end w-[90%] mx-auto pt-40 md:py-16 relative text-center md:text-left"
   data-scroll
   data-scroll-speed="1.2"
   data-scroll-id
 >
   <h1
-    class="text-4xl md:text-[8vw] text-white font-bold !leading-tight eslogan relative"
+    class="text-sm md:text-[6.1vw] text-white font-bold !leading-tight title eslogan z-10 md:absolute bottom-[16%]"
   >
+    Software Developer
+  </h1>
+
+  <h1 class="text-[10vw] text-white mix-blend-exclusion font-bold z-0 title">
     Alan Daniel
   </h1>
-  <p class="relative mt-4 text-white md:text-right md:text-2xl eslogan">
-    Software Developer
-  </p>
 </section>
 
 <script>
@@ -23,14 +24,6 @@
     duration: 1,
     ease: "power4.out",
     delay: 2.5,
-  });
-
-  gsap.from(".eslogan", {
-    y: 50,
-    opacity: 0,
-    duration: 1,
-    delay: 3,
-    ease: "power4.out",
     stagger: 0.2,
   });
 
@@ -51,24 +44,27 @@
 
   const lettersSpans = document.querySelectorAll(".letter");
 
-  lettersSpans.forEach((span) => {
-    span.addEventListener("mouseenter", (e) => {
-      gsap.to(e.target, {
-        duration: 0.5,
-        color: "#111",
-        backgroundColor: "#fff",
-        ease: "power4.out",
-      });
+  const showLetters = (e: Event) => {
+    gsap.to(e.target, {
+      duration: 0.5,
+      opacity: 1,
+      color: "#000",
+      backgroundColor: "#fff",
+      ease: "power4.out",
     });
+  };
 
-    span.addEventListener("mouseleave", (e) => {
-      gsap.to(e.target, {
-        duration: 0.5,
-        color: "#fff",
-        backgroundColor: "transparent",
-        ease: "power4.out",
-        delay: 0.5,
-      });
+  const hideLetters = (e: Event) => {
+    gsap.to(e.target, {
+      duration: 0.5,
+      opacity: 0,
+      ease: "power4.out",
+      delay: 0.5,
     });
+  };
+
+  lettersSpans.forEach((span) => {
+    span.addEventListener("mouseenter", showLetters);
+    span.addEventListener("mouseleave", hideLetters);
   });
 </script>

@@ -6,10 +6,18 @@ html {
   overflow: hidden;
 }
 
+p {
+  font-weight: 400;
+}
+
 .c-scrollbar {
   @apply m-1;
 }
 
 .c-scrollbar_thumb {
   @apply !bg-white;
+}
+
+.letter {
+  @apply py-2 opacity-100 pointer-events-none md:pointer-events-auto md:opacity-0;
 }

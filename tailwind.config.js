@@ -3,7 +3,7 @@ module.exports = {
   content: ["./public/**/*.html", "./src/**/*.{astro,js,jsx,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ["Roboto Mono", "sans-serif"],
+      sans: ["IBM Plex Mono", "sans-serif"],
     },
 
     extend: {},
